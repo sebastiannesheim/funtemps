@@ -34,3 +34,9 @@ func TestFarhenheitToCelsius(t *testing.T) {
 
 // De andre testfunksjonene implementeres her
 // ...
+
+ // Konverterer Farhenheit til Celsius
+ func FarhenheitToCelsius(value float64) float64 {
+	// Legger inn formellen Celsius = (Farhrenheit - 32)*(5/9)
+	return (value - 32)*(5/9)
+ }
