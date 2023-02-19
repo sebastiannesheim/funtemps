@@ -20,3 +20,15 @@ func FarhenheitToCelsius(value float64) float64 {
 
 // De andre konverteringsfunksjonene implementere her
 // ...
+
+func FahrenheitToCelsius(fahrenheit float64) float64 {
+  return (fahrenheit - 32) * 5 / 9
+}
+
+func CelsiusToFahrenheit(celsius float64) float64 {
+  return celsius*9/5 + 32
+}
+
+func KelvinToCelsius(kelvin float64) float64 {
+  return kelvin - 273.15
+}
