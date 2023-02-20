@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"funtemps/conv"
 )
 
 // Definerer flag-variablene i hoved-"scope"
@@ -52,12 +53,6 @@ func main() {
 	} else if isFlagPassed("C") && isFlagPassed("K") {
 		flagError("-C", "-K")
 		return
-	} else if isFlagPassed("funfacts") && (isFlagPassed("F") || isFlagPassed("C") || isFlagPassed("K")) {
-		fmt.Println("Error: -funfacts cannot be used with -F, -C, or -K flags")
-		return
-	} else if isFlagPassed("funfacts") && !isFlagPassed("t") {
-		fmt.Println("Error: -funfacts must be used with -t flag")
-		return
 	}
 
 	/**
@@ -92,15 +87,6 @@ func main() {
 	} else if isFlagPassed("K") && isFlagPassed("out") {
 		result := KelvinToCelsius(kelvin)
 		fmt.Printf("%0.2f°K is %0.2f°C\n", kelvin, result)
-	} else if isFlagPassed("C") && isFlagPassed("fact") {
-		result := funfacts.RandomCelsiusFact()
-		fmt.Println(result)
-	} else if isFlagPassed("F") && isFlagPassed("fact") {
-		result := funfacts.RandomFahrenheitFact()
-		fmt.Println(result)
-	} else if isFlagPassed("K") && isFlagPassed("fact") {
-		result := funfacts.RandomKelvinFact()
-		fmt.Println(result)
 	} else if isFlagPassed("conv") {
 		result := conv.Convert(value, unit)
 		fmt.Printf("%0.2f %s is %0.2f %s\n", value, unit, result.Value, result.Unit)
