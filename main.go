@@ -79,17 +79,14 @@ func main() {
 	*/
 
 	if isFlagPassed("F") && isFlagPassed("out") {
-		result := FahrenheitToCelsius(fahr)
+		result := conv.FahrenheitToCelsius(fahr)
 		fmt.Printf("%0.2f°F is %0.2f°C\n", fahr, result)
 	} else if isFlagPassed("C") && isFlagPassed("out") {
-		result := CelsiusToFahrenheit(celsius)
+		result := conv.CelsiusToFahrenheit(celsius)
 		fmt.Printf("%0.2f°C is %0.2f°F\n", celsius, result)
 	} else if isFlagPassed("K") && isFlagPassed("out") {
-		result := KelvinToCelsius(kelvin)
+		result := conv.KelvinToCelsius(kelvin)
 		fmt.Printf("%0.2f°K is %0.2f°C\n", kelvin, result)
-	} else if isFlagPassed("conv") {
-		result := conv.Convert(value, unit)
-		fmt.Printf("%0.2f %s is %0.2f %s\n", value, unit, result.Value, result.Unit)
 	} else {
 		flag.Usage()
 	}
