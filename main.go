@@ -18,7 +18,7 @@ func init() {
 	flag.Float64Var(&kel, "K", 0.0, "temperatur i grader kelvin")
 	flag.Float64Var(&cel, "C", 0.0, "temperatur i grader celsius")
 
-	flag.StringVar(&out, "out", "C", "beregne temperatur i C - celsius, F - farhenheit, K- Kelvin")
+	flag.StringVar(&out, "out", "C", "beregne temperatur i C - celsius, F - fahrenheit, K- Kelvin")
 	flag.StringVar(&funfacts, "funfacts", "sun", "\"fun-facts\" om sun - Solen, luna - Månen og terra - Jorden")
 
 }
@@ -48,25 +48,25 @@ func main() {
 
 	// celsius to fahrenheit
 	if isFlagPassed("C") && out == "F" {
-		output := conv.CelsiusToFarhenheit(cel)
+		output := conv.CelsiusToFahrenheit(cel)
 		fmt.Printf("%v C er %v F", cel, output)
 	}
 
 	// fahrenheit to celsius
 	if isFlagPassed("F") && out == "C" {
-		output := conv.FarhenheitToCelsius(fahr)
+		output := conv.FahrenheitToCelsius(fahr)
 		fmt.Printf("%v F er %v C", fahr, output)
 	}
 
 	// kelvin to fahrenheit
 	if isFlagPassed("K") && out == "F" {
-		output := conv.KelvinToFarhenheit(kel)
+		output := conv.KelvinToFahrenheit(kel)
 		fmt.Printf("%v K er %v F", kel, output)
 	}
 
 	// fahrenheit to kelvin
 	if isFlagPassed("F") && out == "K" {
-		output := conv.FarhenheitToKelvin(fahr)
+		output := conv.FahrenheitToKelvin(fahr)
 		fmt.Printf("%v F er %v K", fahr, output)
 	}
 }
@@ -79,4 +79,3 @@ func isFlagPassed(name string) bool {
 		}
 	})
 	return found
-	
