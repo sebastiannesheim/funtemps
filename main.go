@@ -27,13 +27,6 @@ func main() {
 
 	flag.Parse()
 
-	if isFlagPassed("funfacts") {
-		funfactsAbout := GetFunFacts(funfacts)
-		for i := 0; i < len(funfactsAbout); i++ {
-			fmt.Println(funfactsAbout[i])
-		}
-	}
-
 	// kelvin to celsius
 	if isFlagPassed("K") && out == "C" {
 		output := conv.KelvinToCelsius(kel)
@@ -79,3 +72,4 @@ func isFlagPassed(name string) bool {
 		}
 	})
 	return found
+} 
